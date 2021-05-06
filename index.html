@@ -6,12 +6,31 @@
   </head>
   <body>
     <form id="nameForm">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="Joy"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="Madden"><br><br>
-        <input type="button" onclick="searchByName()" value="Submit">
-    </form> 
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="Joy"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Madden"><br><br>
+      <input type="button" onclick="searchByName()" value="Submit">
+  </form> 
+  <table id="people">
+      <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Eyecolor</th>
+        <th>Occupation</th>
+        <th>Parents</th>
+        <th>Spouse</th>
+      </tr>
+      <tbody id="peopleRows">
+        
+      </tbody>
+    </table>
+    
       
 
     <script src="data.js"></script>

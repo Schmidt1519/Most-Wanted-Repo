@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+
 function searchByName(){
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
@@ -20,3 +23,26 @@ function searchByName(){
         console.log('Sorry, looks like there is no one with that name.');
     }
 }
+
+function viewAll(){
+    let concat = ''
+    people.map(function (person){
+        concat += `<tr>
+        <td>${person.id}</td>
+        <td>${person.firstName}</td>
+        <td>${person.lastName}</td>
+        <td>${person.gender}</td>
+        <td>${person.dob}</td>
+        <td>${person.height}</td>
+        <td>${person.weight}</td>
+        <td>${person.eyecolor}</td>
+        <td>${person.occupation}</td>
+        <td>${person.parents}</td>
+        <td>${person.currentSpouse}</td>
+        </tr>`
+    })
+    document.getElementById("peopleRows").innerHTML = concat
+}
+
+viewAll()
+// document.getElementById("peopleRows").innerHTML = ""
