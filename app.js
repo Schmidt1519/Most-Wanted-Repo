@@ -74,8 +74,13 @@ function viewAll(){
         <td>${person.currentSpouse}</td>
         </tr>`
     })
-    document.getElementById("peopleRows").innerHTML = concat
+    document.getElementById("peopleRows").innerHTML = concat;
 }
 
+<<<<<<< HEAD
 viewAll()
 // document.getElementById("peopleRows").innerHTML = ""
+=======
+viewAll();
+//document.getElementById("peopleRows")innerHTML = ""
+>>>>>>> c24d420e95d1a9e66577fbbbfa39169e27552834

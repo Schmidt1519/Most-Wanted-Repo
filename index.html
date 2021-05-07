@@ -5,13 +5,69 @@
     <title>devCodeCamp &middot; Most Wanted</title>
   </head>
   <body>
+
+    <!-- Name Search Form (provided) -->
     <form id="nameForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="Joy"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Madden"><br><br>
+        <input type="button" onclick="searchByName()" value="Submit">
+    </form> 
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- Single Criteria Search Form -->
+    <form id="singleCriteriaForm">
       <label for="fname">First name:</label><br>
       <input type="text" id="fname" name="fname" value="Joy"><br>
       <label for="lname">Last name:</label><br>
       <input type="text" id="lname" name="lname" value="Madden"><br><br>
-      <input type="button" onclick="searchByName()" value="Submit">
+      <label for="gender">Gender:</label><br>
+      <input type="text" id="gender" name="gender" value="female"><br>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="date" id="dob" name="dob" value="4/20/1939"><br>
+      <label for="height">Height:</label><br>
+      <input type="number" id="height" name="height" value=69><br>
+      <label for="weight">Weight:</label><br>
+      <input type="number" id="weight" name="weight" value=199><br>
+      <label for="eyeColor">Eye Color:</label><br>
+      <input type="text" id="eyeColor" name="eyeColor" value="hazel"><br>
+      <label for="occupation">Occupation:</label><br>
+      <input type="text" id="occupation" name="occupation" value="doctor"><br>
+      <!-- <input type="button" onclick="searchByName()" value="Submit"> -->
   </form> 
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <!-- Multi Criteria Search Form -->
+  <form id="MultiCriteriaForm">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="Joy"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Madden"><br><br>
+    <label for="gender">Gender:</label><br>
+    <input type="text" id="gender" name="gender" value="female"><br>
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" value="4/20/1939"><br>
+    <label for="height">Height:</label><br>
+    <input type="number" id="height" name="height" value=69><br>
+    <label for="weight">Weight:</label><br>
+    <input type="number" id="weight" name="weight" value=199><br>
+    <label for="eyeColor">Eye Color:</label><br>
+    <input type="text" id="eyeColor" name="eyeColor" value="hazel"><br>
+    <label for="occupation">Occupation:</label><br>
+    <input type="text" id="occupation" name="occupation" value="doctor"><br>
+    <!-- <input type="button" onclick="searchByName()" value="Submit"> -->
+</form> 
+  <br>
+  <br>
+  <br>
+
   <table id="people">
       <tr>
         <th>ID</th>
@@ -29,17 +85,12 @@
       <tbody id="peopleRows">
         
       </tbody>
-    </table>
+  </table>
     <br>
     <br>
     <table id="filteredPeople">
-
     </table>
-
-    
-    
-      
-
+   
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
