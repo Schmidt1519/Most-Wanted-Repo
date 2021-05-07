@@ -13,14 +13,16 @@ function searchByName(){
         if(person.firstName === firstNameInput && person.lastName === lastNameInput){
             return true;
         }
-        return false;
+            return false;
     });
     
     // Rather than console logging, you need to append the filteredPeople to a table.
+    
     if(filteredPeople.length > 0){
-        console.log(filteredPeople);
-    }else{
-        console.log('Sorry, looks like there is no one with that name.');
+        document.getElementById("filteredPeople").innerHTML=(filteredPeople)
+    }
+    else{
+      alert('Sorry, looks like there is no one with that name.');
     }
 }
 
@@ -46,3 +48,22 @@ function viewAll(){
 
 viewAll()
 // document.getElementById("peopleRows").innerHTML = ""
+
+// <table id="people2">
+//       <tr>
+//         <th>ID</th>
+//         <th>Firstname</th>
+//         <th>Lastname</th>
+//         <th>Gender</th>
+//         <th>DOB</th>
+//         <th>Height</th>
+//         <th>Weight</th>
+//         <th>Eyecolor</th>
+//         <th>Occupation</th>
+//         <th>Parents</th>
+//         <th>Spouse</th>
+//       </tr>
+//       <tbody id="filteredPeople">
+        
+//       </tbody>
+//     </table>
