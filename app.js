@@ -79,22 +79,3 @@ function viewAll(){
 
 viewAll()
 // document.getElementById("peopleRows").innerHTML = ""
-
-// <table id="people2">
-//       <tr>
-//         <th>ID</th>
-//         <th>Firstname</th>
-//         <th>Lastname</th>
-//         <th>Gender</th>
-//         <th>DOB</th>
-//         <th>Height</th>
-//         <th>Weight</th>
-//         <th>Eyecolor</th>
-//         <th>Occupation</th>
-//         <th>Parents</th>
-//         <th>Spouse</th>
-//       </tr>
-//       <tbody id="filteredPeople">
-        
-//       </tbody>
-//     </table>
