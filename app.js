@@ -66,7 +66,7 @@ function searchByName(){
         })
         document.getElementById("peopleRows").innerHTML = ""
         document.getElementById("peopleRows").innerHTML=concat
-        viewFam();
+        
     }
     else{
       alert('Sorry, looks like there is no one with that name.');
@@ -254,37 +254,29 @@ function multipleCriteriaSearch(){
 
 // DESCENDANTS
 function viewFam(personsId){
+    let desc=[];
         let filterFam = people.filter(function (person) {
             if(person.parents.includes(personsId)){
+            desc.push(person);
+           
             return true;
+     
                 }
-        return false;
+    return false;
         
     });
-    
-    (filterFam)
+
+// for(i=0;i<filterFam.length;i++){
+//     if(people.parents.includes(filterFam[i].id)){
+//         desc.push();
+//     }
+// }
+   
         if(filterFam.length >0){
             
-        
-       let head=''
         let family=''
-         filterFam.map(function(person){
-           head = `<tr>
-             <th>Descendants</th>
-             </tr>
-             <tr>
-             <th>ID</th>
-             <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Gender</th>
-            <th>DOB</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Eyecolor</th>
-            <th>Occupation</th>
-            <th>Parents</th>
-            <th>Spouse</th>
-             </tr>`
+        desc.map(function(person){
+          
              family+=
             `<tr>
              <td>${person.id}</td>
@@ -298,9 +290,10 @@ function viewFam(personsId){
              <td>${person.occupation}</td>
              <td>${person.parents}</td>
              <td>${person.currentSpouse}</td>
+             <button onclick="viewFam(${person.id})">Descendants</button>
          </tr>`
          })
-         document.getElementById("family").innerHTML=head+family;
+         document.getElementById("desc").innerHTML=family;
          
     }
     

@@ -27,7 +27,7 @@
         <input type="text" id="eyeColor" name="eyeColor" value="hazel"><br>
         <label for="occupation">Occupation:</label><br>
         <input type="text" id="occupation" name="occupation" value="doctor"><br><br>
-        <input type="button" onclick="searchSingle()||multipleCriteriaSearch()" value="Search">
+        <input type="button" onclick="singleSearch()||multipleCriteriaSearch()" value="Search">
     </form> 
    </div>
 
@@ -46,11 +46,14 @@
         <th>Spouse</th>
       </tr>
       <tbody id="peopleRows">
-        
+      
       </tbody>
       <br>
       <br>
       <table id="family">
+        <tbody id="desc">
+
+        </tbody>
       </table>
   
     <script src="data.js"></script>
