@@ -1,5 +1,6 @@
 // 'use strict';
 
+
 // Beginning table to view all people and information
 function viewAll(){
     let concat = ''
@@ -23,19 +24,21 @@ function viewAll(){
 
 viewAll();
 
-
 // NAME SEARCH
 function searchByName(){
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
-
+    
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     let filteredPeople = people.filter(function (person) {
         if(person.firstName===firstNameInput){   
             return true;
             }
-        if(person.firstName === firstNameInput && person.lastName === lastNameInput){
+
+        if(person.firstName === firstNameInput && person.lastName === lastNameInput){ 
+             
+
             return true;
         }
             return false;
@@ -62,14 +65,14 @@ function searchByName(){
         </tr>`
         })
         document.getElementById("peopleRows").innerHTML = ""
-        document.getElementById("peopleRows").innerHTML = concat
-       
+        document.getElementById("peopleRows").innerHTML=concat
+        viewFam();
     }
     else{
       alert('Sorry, looks like there is no one with that name.');
     }
+    
 }
-
 
 // SINGLE CRITERIA SEARCH
 function singleSearch(){
@@ -259,8 +262,7 @@ function viewFam(personsId){
             }
             return false;
             });
-    } 
-
+    
 
 // Further filter descendants
     for(let i = 0; i < filterFam.length; i++){
@@ -274,8 +276,6 @@ function viewFam(personsId){
             }
             return false;
             });
-    }
-             
     
     
 // Checks - can delete once working
@@ -285,15 +285,16 @@ function viewFam(personsId){
     
 // Append table after clicking descendants   
         if(filterFam.length >0){
-        let head=''
+        
+       let head=''
         let family=''
-            filterFam.map(function(person){
-            head = `<tr>
-                <th>Descendants</th>
-                </tr>
-                <tr>
-            <th>ID</th>
-            <th>Firstname</th>
+         filterFam.map(function(person){
+           head = `<tr>
+             <th>Descendants</th>
+             </tr>
+             <tr>
+             <th>ID</th>
+             <th>Firstname</th>
             <th>Lastname</th>
             <th>Gender</th>
             <th>DOB</th>
@@ -303,8 +304,8 @@ function viewFam(personsId){
             <th>Occupation</th>
             <th>Parents</th>
             <th>Spouse</th>
-                </tr>`
-                family+=
+             </tr>`
+             family+=
             `<tr>
                 <td>${person.id}</td>
                 <td>${person.firstName}</td>
@@ -407,4 +408,4 @@ function viewFam(personsId){
 // findSpouse();
 // findParents();
 // findSibling();
-// }   
+// } 
