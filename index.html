@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>devCodeCamp &middot; Most Wanted</title>
-    <!-- <link rel="stylesheet" type="text/css" href="./styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
 
-    <div class="search-headers"> 
+<div class="search-headers"> 
     <!-- Name Search Form (provided) -->
     <form id="nameForm">
         <label for="fname">First name:</label><br>
@@ -30,19 +30,19 @@
         <input type="text" id="occupation" name="occupation" value=""><br>
         <input type="button" onclick="singleSearch() || multipleCriteriaSearch()" value="Search">
   </form> 
-
-
 </div>
+
+<div class="people-table">
   <table id="people">
       <tr>
         <th>ID</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
+        <th>First Name</th>
+        <th>Last Name</th>
         <th>Gender</th>
         <th>DOB</th>
         <th>Height</th>
         <th>Weight</th>
-        <th>Eyecolor</th>
+        <th>Eye Color</th>
         <th>Occupation</th>
         <th>Parents</th>
         <th>Spouse</th>
@@ -51,8 +51,10 @@
       <br>
       <br>
       <table id="family">
-      </table>
-   
+    </table>
+    <table id="family2">
+    </table>
+</div>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>

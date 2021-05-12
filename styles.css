@@ -9,3 +9,7 @@ h1 {
     font-size: 20px;
     display: flex;
 }
+
+.people-table {
+    border-spacing: 20px;
+}
