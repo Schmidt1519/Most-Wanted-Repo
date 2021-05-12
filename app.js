@@ -254,47 +254,159 @@ function multipleCriteriaSearch(){
 
 // DESCENDANTS
 function viewFam(personsId){
-    let desc=[];
-        let filterFam = people.filter(function (person) {
-            if(person.parents.includes(personsId)){
-            desc.push(person);
-           
-            return true;
-     
-                }
-    return false;
-        
-    });
+    let descendants = [];
+    let filterFam = people.filter(function (person) {
 
-// for(i=0;i<filterFam.length;i++){
-//     if(people.parents.includes(filterFam[i].id)){
-//         desc.push();
-//     }
-// }
-   
+        if(person.parents.includes(personsId)) {
+            return true;
+            }
+            return false;
+            });
+    
+
+// Further filter descendants
+    for(let i = 0; i < filterFam.length; i++){
+        descendants.push(filterFam[i].id) 
+    }
+
+    let filterFam2 = people.filter(function (person) {
+
+        if(person.parents.includes(descendants[3])) {
+            return true;
+            }
+            return false;
+            });
+    
+    
+// Checks - can delete once working
+                console.log(filterFam);  // check
+                console.log(descendants);  // check
+                console.log(filterFam2);  // check
+    
+// Append table after clicking descendants   
         if(filterFam.length >0){
-            
+        
+       let head=''
+
         let family=''
-        desc.map(function(person){
-          
+        filterFam.map(function(person){
+            head = `<tr>
+            <th>Descendants</th>
+            </tr>
+            <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Eyecolor</th>
+        <th>Occupation</th>
+        <th>Parents</th>
+        <th>Spouse</th>
+            </tr>`
              family+=
             `<tr>
-             <td>${person.id}</td>
-             <td>${person.firstName}</td>
-             <td>${person.lastName}</td>
-             <td>${person.gender}</td>
-             <td>${person.dob}</td>
-             <td>${person.height}</td>
-             <td>${person.weight}</td>
-             <td>${person.eyeColor}</td>
-             <td>${person.occupation}</td>
-             <td>${person.parents}</td>
-             <td>${person.currentSpouse}</td>
-             <button onclick="viewFam(${person.id})">Descendants</button>
-         </tr>`
-         })
-         document.getElementById("desc").innerHTML=family;
-         
-    }
+                <td>${person.id}</td>
+                <td>${person.firstName}</td>
+                <td>${person.lastName}</td>
+                <td>${person.gender}</td>
+                <td>${person.dob}</td>
+                <td>${person.height}</td>
+                <td>${person.weight}</td>
+                <td>${person.eyeColor}</td>
+                <td>${person.occupation}</td>
+                <td>${person.parents}</td>
+                <td>${person.currentSpouse}</td>
+            </tr>`
+            })
+            document.getElementById("family").innerHTML=head+family;
+        }
     
+
+        if(filterFam2.length >0){
+        let head=''
+        let family=''
+            filterFam2.map(function(person){
+            head = `<tr>
+                <th>Descendants</th>
+                </tr>
+                <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Eyecolor</th>
+            <th>Occupation</th>
+            <th>Parents</th>
+            <th>Spouse</th>
+                </tr>`
+                family+=
+            `<tr>
+                <td>${person.id}</td>
+                <td>${person.firstName}</td>
+                <td>${person.lastName}</td>
+                <td>${person.gender}</td>
+                <td>${person.dob}</td>
+                <td>${person.height}</td>
+                <td>${person.weight}</td>
+                <td>${person.eyeColor}</td>
+                <td>${person.occupation}</td>
+                <td>${person.parents}</td>
+                <td>${person.currentSpouse}</td>
+            </tr>`
+            })
+            document.getElementById("family2").innerHTML=head+family;
+    }
 }
+
+
+// IMMEDIATE FAMILY
+// function immediateFamily() {
+
+//     function findSpouse(personsId){
+
+//         let spouseResult = people.filter(function (person) {
+
+//             if(person.currentSpouse.includes(personsId)) {
+//             return true;
+//             }
+//             return false;
+//             });
+        
+//         console.log(spouseResult);
+//     }
+
+//     function findParents(personsId){
+
+//         let parentsResult = people.filter(function (person) {
+
+//             if(person.parents.includes(personsId)) {
+//             return true;
+//             }
+//             return false;
+//             });
+        
+//         console.log(parentsResult);
+//     }
+
+//     function findSibling(personsId){
+
+//         let siblingResult = people.filter(function (person) {
+
+//             if(person.parents.includes(personsId)) {
+//             return true;
+//             }
+//             return false;
+//             });
+        
+//         console.log(siblingResult);
+//     }
+// findSpouse();
+// findParents();
+// findSibling();
+// } 
